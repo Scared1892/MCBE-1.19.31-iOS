@@ -1,0 +1,700 @@
+//*************************//
+       MCBE 1.19.31
+        by Scared1892
+//*************************//
+
+ActorLegacySaveConverter::convertHorse(Actor &, CompoundTag const&) //0x104990CE0
+
+CompoundTag::getFloat(std::string const&) //0x103B2D8E8
+CompoundTag::putString(std::string const&,std::string const&) //0x103B2CCEC
+CompoundTag::put(std::string const&, std::unique_ptr<Tag>) //0x103B2C6D0
+CompoundTag::putBoolean(std::string const&, bool) //0x103B2CFF4
+CompoundTag::putInt(std::string const&, int) //0x103B2CB84
+CompoundTag::putFloat(std::string const&, float) //0x103B2CC5C
+CompoundTag::putByte(std::string const&, char) //0x103B2CAAC
+CompoundTag::getList(std::string const&)const //0x103B2DB5C
+CompoundTag::contains(std::string const&, Tag::Type)const //0x103B2D4F4
+CompoundTag::contains(std::string const&)const //0x103B2D428
+
+//StringTag vTable 0x107FB6888
+StringTag::StringTag(std::string const&) //0x103B31604
+
+ListTag::ListTag(void) //0x103B2FC20
+ListTag::add(std::unique_ptr<Tag>) //0x103B309AC
+ListTag::size(void)const //0x103B30A10
+ListTag::get(int)const //0x103B309E8
+
+//Actor vTable 0x1080492B8
+Fields:
+Actor::synchedActorData //0x168
+Actor::currentBlockSource (currentRegion ??) //0x330
+Actor::level //0x340
+Actor::AABBShapeComponent //0x3D0
+Actor::definitionDiffListSimpleContainer //0x550
+Actor::armorSimpleContainer //0x548
+
+Actor::Actor(ActorDefinitionGroup *, ActorDefinitionIdentifier const&) //0x104930494
+Actor::remove(void) //0x10493FCA4
+Actor::getLevel(void) //0x104933BF0 (0x340 field)
+Actor::getLevel(void)const //0x10493A3A0
+Actor::getRegion(void)const //0x10493463C
+Actor::getAABBShapeComponent(void)const //0x10493E88C
+Actor::setStatusFlag(ActorFlags, bool) //0x104C25B5C
+Actor::setMarkVariant(int) //0x104C25B78
+Actor::setBaseDefinition(ActorDefinitionIdentifier const&,bool,bool) //0x104931B8C
+Actor::addDefinitionGroup(std::string const&) //0x1049382B8
+Actor::getAttachPos(ActorLocation, float)const //0x10493F464
+Actor::getFiringPos(void)const //0x10493F624
+Actor::setRot(Vec2 const&) //0x103A791FC
+Actor::applyRot(idk) //0x104940320 (mby same of setRot)
+Actor::move(Vec3 const&) //0x10493DAFC
+Actor::getInterpolatedRidingPosition(float)const //0x104959D54
+Actor::applyInterpolatedRidingPosition(idk) //0x10493C2A8 (can be same of getInterpolatedRidingPosition)
+Actor::getInterpolatedBodyYaw(float)const //0x104959EE4
+Actor::getYawSpeedInDegreesPerSecond(void)const //0x1049403FC
+Actor::getInterpolatedWalkAnimSpeed(float)const //0x104940424
+Actor::getInterpolatedRidingOffset(float)const //0x104940444
+Actor::checkBlockCollisions(AABB const&) //0x104956078 //qword_1085031E8 - BedrockBlocks::mAir(static const ptr)
+Actor::checkBlockCollisions(void) //0x104956254
+Actor::breaksFallingBlocks(void)const //0x10495F578
+Actor::blockedByShield(ActorDamageSource const&, Actor&) //0x10495F580
+Actor::lerpMotion(Vec3 const&) //0x10494B2C4
+Actor::getAddPacket(void) //0x1049404B0
+Actor::normalTick(void) //0x104940690
+Actor::baseTick(void) //0x1049409A4
+Actor::rideTick(void) //0x1049410A4
+Actor::positionRider(Actor&,float) //0x104943994
+Actor::getExitTip(std::string const&, InputMode)const //0x104944D94
+Actor::intersects(Vec3 const&, Vec3 const&)const //0x10494A76C
+Actor::isInWall(void)const //0x10493B500
+Actor::isInvisible(void)const //0x104953F60 (!! weird data id)
+Actor::canShowNameTag(void)const //0x104953F6C (!! weird data id)
+Actor::canExistInPeaceful(void)const //0x104953F58
+Actor::setNameTagVisible(bool) //0x104953F78
+Actor::getNameTag(void)const //0x104953F88
+Actor::getNameTagAsHash(void)const //0x104953F94
+Actor::getFormattedNameTag(void)const //0x104953F9C
+Actor::setNameTag(std::string const&) //0x104954068
+Actor::getAlwaysShowNameTag(void)const //0x1049542AC
+Actor::setScoreTag(std::string const&) //0x1049542B4
+Actor::getScoreTag(void)const //0x1049542C4
+Actor::isInWater(void)const //0x10493B738
+Actor::hasEnteredWater(void)const //0x10493B740
+Actor::getCameraOffset(void)const //0x10494620C (!!)
+Actor::getShadowHeightOffs(void) //0x10494AA38
+Actor::getShadowRadius(void)const //0x10494AA48
+Actor::canSee(Actor const&)const //0x104955C24
+Actor::canSee(Vec3 const&)const //0x104955D08
+Actor::isSkyLit(float) //0x10493F664
+Actor::getBrightness(float)const //0x10493F814
+Actor::interactPreventDefault(void) //0x104953F50
+Actor::isImmobile(void)const OR Actor::isSilent(void) //0x104954428
+Actor::isPickable(void) //0x104954434
+Actor::isFishable(void)const //0x10494A7BC
+Actor::isPushable(void)const //0x10494A7B4
+Actor::isSleeping(void)const //0x10494A7C4
+Actor::isShootable(void) //0x10494A7D0
+Actor::isSneaking(void)const //0x10494C700
+Actor::isBlocking(void)const //0x10494C708
+Actor::isAlive(void)const //0x10494AA50
+Actor::isOnHotBlock(void)const //0x104953F48
+Actor::isCreativeModeAllowed(void) //0x10494A980
+Actor::isSurfaceMob(void)const //0x10494A988
+Actor::isTargetable(void)const //0x10494A990
+Actor::findAttackTarget(void) //0x10494AA20
+Actor::getInventorySize(void)const //0x104948D80
+Actor::getEquipSlots(void)const //0x104948DC0
+Actor::getChestSlots(void)const //0x104948E64
+Actor::setStanding(bool) //0x104948BCC
+Actor::canPowerJump(void)const //0x104948BF8
+Actor::setCanPowerJump(bool) //0x104948C04
+Actor::isEnchanted(void)const //0x104948C14
+Actor::shouldRender(void)const //0x10494A7DC
+Actor::getPosExtrapolated(float)const //0x10493F05C
+Actor::getPosOld(void)const //0x10493F04C
+Actor::getPos(void)const //0x10493F044
+Actor::setPos(Vec3 const&) //0x10493EDA0
+Actor::getUniqueID(void)const //0x1049390DC (0x560 from vTable)
+Actor::getOwnerEntityType(void) //0x104954444
+Actor::initializeComponents(Actor::InitializationMethod, VariantParameterList const&) //0x10493702C
+Actor::onLightningHit(void) //0x1049477AC
+Actor::feed(int) //0x10494A664
+Actor::spawnEatParticles(ItemStack const&, int) //0x104949B64
+Actor::spawnDeathParticles(void) //0x104949878
+Actor::spawnTamingParticles(bool) //0x104947838
+Actor::handleEntityEvent(ActorEvent, int) //0x104948FBC
+Actor::getPickRadius(void) //0x10494ACE0
+Actor::spawnAtLocation(int, int) //0x10495343C
+Actor::spawnAtLocation(int, int, float) //0x10495344C
+Actor::spawnAtLocation(Block const&, int) //0x104953628
+Actor::spawnAtLocation(Block const&, int, float) //0x104953638
+Actor::spawnAtLocation(ItemStack const&, float) //0x1049537A4
+Actor::despawn(void) //0x104953858
+Actor::killed(Actor&) //0x10495395C
+Actor::getArmor(ArmorSlot)const //0x10494B710
+Actor::getArmorMaterialTypeInSlot(ArmorSlot)const //0x10494B75C
+Actor::getArmorMaterialTextureTypeInSlot(ArmorSlot)const //0x10494B764
+Actor::getArmorColorInSlot(ArmorSlot, int)const //0x10494B76C
+Actor::getEquippedTotem(void)const //0x10494C324
+Actor::consumeTotem(void) //0x10494C408
+Actor::save(CompoundTag &) //0x10494C7B0
+Actor::saveLinks(void)const //0x10494DD98
+Actor::saveEntityFlags(CompoundTag &) //0x10494E994
+Actor::saveWithoutId(CompoundTag &) //0x10494DF80
+Actor::loadEntityFlags(CompoundTag const&, DataLoadHelper &) //0x10494F504
+Actor::load(CompoundTag const&, DataLoadHelper &) //0x1049507F8
+Actor::loadLinks(CompoundTag const&, std::vector<ActorLink> &, DataLoadHelper &) //0x1049530D4
+Actor::getEntityTypeId(void)const //0x104953420
+Actor::getSourceUniqueID(void)const //0x10495443C
+Actor::getPortalCooldown(void)const //0x10495A0C8
+Actor::getPortalWaitTime(void)const //0x10495A0D0
+Actor::getDimensionId(void)const //0x10495A0D8
+Actor::canChangeDimensions(void)const //0x10495A0E0
+Actor::getControllingPlayer(void)const //0x10495A4C8
+Actor::_getBlockOnPos(void) //0x1049368E8
+Actor::spawnDustParticles(void) //0x104945F7C
+Actor::checkFallDamage(float, bool) //0x104945D60
+Actor::causeFallDamage(float) //0x104946098
+Actor::handleFallDistanceOnServer(float, bool) //0x104946148
+Actor::playSynchronizedSound(LevelSoundEvent, Vec3 const&, Block const&, bool) //0x104954988
+Actor::playSynchronizedSound(LevelSoundEvent, Vec3 const&, int, bool) //0x1049549DC
+Actor::onSynchedDataUpdate(int) //0x104954ABC
+Actor::canAddRider(Actor&)const //0x104956478
+Actor::canBePulledIntoVehicle(void)const //0x10495675C
+Actor::inCaravan(void)const //0x1049567C8
+Actor::_initializeLeashRopeSystem(void) //0x104956840
+Actor::tickLeash(void) //0x104956CD0
+Actor::sendMotionPacketIfNeeded(void) //0x104956EFC
+Actor::canSynchronizeNewEntity(void)const //0x1049572F8
+Actor::stopRiding(bool, bool, bool) //0x104945578
+Actor::startSwimming(void) //0x104945780
+Actor::stopSwimming(void) //0x104945790
+Actor::getCommandPermissionLevel(void)const //0x104943D78
+Actor::getDeathTime(void)const //0x10495A734
+Actor::heal(int) //0x10495A7A4
+Actor::isInvertedHealAndHarm(void)const //0x10495A848
+Actor::canBeAffected(int)const //0x10495B3A0
+Actor::canBeAffected(MobEffectInstance const&)const //0x10495B36C
+Actor::canBeAffectedByArrow(MobEffectInstance const&)const //0x10495B528
+Actor::onEffectAdded(MobEffectInstance &) //0x10495B6C0
+Actor::onEffectUpdated(MobEffectInstance const&) //0x10495B870
+Actor::onEffectRemoved(MobEffectInstance &) //0x10495B9A4
+Actor::hasOutputSignal(unsigned char)const //0x10495C648
+Actor::getOutputSignal(void)const //0x10495C650
+Actor::getDebugText(std::vector<std::string> &) //0x10495C994
+Actor::getMapDecorationRotation(void)const //0x10495DCA4
+Actor::getRiderYRotation(Actor const&)const //0x10495DCAC
+Actor::getYHeadRot(void)const //0x10495DCB4
+Actor::isCreative(void)const //0x10495DCE4
+Actor::setSize(float, float) //0x10494014C
+Actor::canDestroyBlock(Block const&)const //0x10493E894
+Actor::getInteraction(Player &, ActorInteraction &, Vec3 const&) //0x10495E894
+Actor::add(ItemStack &) //0x10495DD3C
+Actor::drop(ItemStack const&, bool) //0x10495E418
+Actor::wobble(void) //0x104960378
+Actor::onOrphan(void) //0x104960198
+Actor::setDamageNearbyMobs(bool) //0x1049488FC
+Actor::reloadLootTable(void) //0x104958E6C
+Actor::reloadLootTable(EquipmentTableDescription const*) //0x104958EB8
+Actor::getDeletionDelayTimeSeconds(void)const //0x100441688
+Actor::kill(void) //0x10495927C
+Actor::dropLeash(bool, bool) //0x105BFD120
+Actor::die(ActorDamageSource const&) //0x104959CFC
+Actor::shouldTick(void)const //0x1049604F4
+Actor::initParams(VariantParameterList &) //0x10493A598
+Actor::markHurt(void) //0x104947298
+Actor::lavaHurt(void) //0x10495C1D4
+Actor::_hurt(ActorDamageSource const&, int, bool, bool) //0x104947470
+Actor::canMakeStepSound(void)const //0x10493DBE0
+Actor::readAdditionalSaveData(CompoundTag const&, DataLoadHelper &) //0x10493915C
+Actor::addAdditionalSaveData(CompoundTag &) //0x1049399F4
+Actor::_playStepSound(BlockPos const&, Block const&) //0x1049544A0
+Actor::_playFlySound(BlockPos const&, Block const&) //0x1049548C0
+Actor::_makeFlySound(void)const //0x104954980
+Actor::checkInsideBlocks(float) //0x1049574F0
+Actor::pushOutOfBlocks(Vec3 const&) //0x104957688
+Actor::doWaterSplashEffect(void) //0x104958030
+Actor::setInvisible(bool) //0x10495BCD8
+Actor::isSwimming(void)const //0x104942494
+Actor::hasCategory(ActorCategory)const //0x104934644
+Actor::getRide(void)const //0x1049390B4
+Actor::getStatusFlag(ActorFlags)const //0x10493B034
+Actor::getStateVectorComponent(void)const //0x10493C2A0 (CAN BE Actor::getPos idkk)
+Actor::tryTeleportTo(Vec3 const&, bool, bool, int, int) //0x104946878
+Actor::getHealth(void)const //0x104958694
+Actor::getMaxHealth(void)const //0x10495A73C
+Actor::_sendDirtyActorData(void) //0x1049448F8
+Actor::startRiding(Actor&) //0x104945410
+Actor::flagRiderToRemove(Actor&) //0x104944C58
+Actor::isImmersedInWater(void)const //0x10493ECC8
+Actor::getDamageNearbyMobs(void)const //0x104948910
+Actor::canSeeInvisible(void)const //0x100147908
+Actor::isRemoved(void)const //0x104945778
+Actor::getViewVector(float)const //0x10493F8F0
+Actor::getOffhandSlot(void)const //0x10494C27C
+Actor::isOnFire(void) //0x104953EC8
+Actor::setSitting(bool) //0x10493B4D4
+Actor::setOwner(ActorUniqueID) //0x10493B35C
+Actor::hurt(ActorDamageSource const&, int, bool, bool) //0x1049473F0
+Actor::onLadder(bool)const //0x10495F67C
+Actor::hasEffect(MobEffect const&)const //0x10493AD74
+Actor::isRiding(void)const //0x104942EB0
+Actor::isValidTarget(Actor*)const //0x10493A780
+Actor::setTarget(Actor*) //0x10493A3B0
+Actor::doFireHurt(int) //0x1049476DC
+Actor::setArmor(ArmorSlot, ItemStack const&) //0x10494B2DC
+Actor::queryEntityRenderer(void)const //0x104953438
+Actor::handleInsidePortal(BlockPos const&) //0x10495A034
+Actor::getEffect(MobEffect const&)const //0x10493AE14
+Actor::getSwimAmount(float)const //0x1049489B8
+Actor::getMolangVariables(void) //0x104960834
+Actor::isControlledByLocalInstance(void)const //0x104942418
+Actor::_removeRider(ActorUniqueID const&, bool, bool) //0x104944FF0
+Actor::getStateVectorComponentNonConst(void) //0x104933284 (!!)
+
+//Level vTable 0x10811FEE8
+Level::GetPlayerList(void) //0x (0x9B0 from vTable)
+Level::getPlayer(mce::UUID const&) //0x (0x1B8 from vTable)
+Level::getPlayer(ActorUniqueID) //0x (0x1D0 from vTable)
+Level::getNewUniqueID(void) //0x (0x818 from vTable)
+Level::fetchEntity(ActorUniqueID,bool) //0x (0x198 from vTable)
+Level::playSound(BlockSource &,LevelSoundEvent,Vec3 const&,int,ActorDefinitionIdentifier const&,bool,bool) //0x (0x570 from vTable)
+Level::getSpawner(void) //0x1053E6C04 (0x68 from vTable)
+Level::isClientSide(void) //0x (0x9A8 from vTable)
+Level::broadcastEntityEvent(Actor *,ActorEvent,int) //0x (0x690 from vTable)
+Level::broadcastSoundEvent(BlockSource &,LevelSoundEvent,Vec3 const&,int,ActorDefinitionIdentifier const&,bool,bool) //0x (0x680 from vTable)
+Level::getLootTables(void) //0x (0xAC8 from vTable)
+Level::getCurrentTick(void) //0x (0x220 from vTable)
+Level::getNewUniqueID(void) //0x (0x818 from vTable)
+Level::getActorEventCoordinator(void) //0x (0x5D8 from vTable)
+Level::getGameRules(void) //0x (0xA68 from vTable)
+Level::getPacketSender(void) //0x (0xA08 from vTable)
+Level::getDefaultGameType(void) //0x (0x3B8 from vTable)
+Level::getDifficulty(void) //0x (0xF8 from vTable)
+Level::getAdventureSettings(void) //0x (0xA58 from vTable)
+
+LevelRendererCamera::frameUpdate(ClientFrameUpdateContext &) //0x1010567EC
+LevelRendererCamera::getRenderDistance(void) //0x10106A25C
+
+Options::get(OptionID) //0x (0x60 from vTable)
+Option::getFloat(void)const //0x103C09A30
+Option::getFloatMax(void)const //0x103C09C84
+Option::getFloatMin(void)const //0x103C09CA8
+Options::getHideHand(void)const //0x1003B1F00
+
+LevelRendererPlayer::OptionsObject //[[0x14D8] 0x258]
+LevelRendererPlayer::getFov(float, bool) //0x101073700
+
+LevelRenderer::Z_NEAR //0x1071E8390 (dword)
+LevelRenderer::frameUpdate(ClientFrameUpdateContext &) //0x101055F04
+LevelRenderer::getLevelRendererPlayer(void) //0x10102FE78
+
+LightTexture::frameUpdate(FrameUpdateContext &) //0x1010AD310
+
+GameRenderer::getTessellator(void) //0x100FF798C
+
+//ClientInstance vTable 0x107CAE010
+Fields:
+ClientInstance::minecraftObject //0xB0
+
+ClientInstance::~ClientInstance() //0x10009B52C
+ClientInstance::~ClientInstance() //0x10009B548
+ClientInstance::onDestroyMinecraftGame(void) //0x10009B5A4
+ClientInstance::onInitMinecraftGame(void) //0x10009B5C4
+ClientInstance::init(Core::FilePathManager *, NetworkHandler &, Timer &, Timer &, Social::IUserManager &, int) //0x10009B6BC
+ClientInstance::teardown(void) //0x10009EC78
+ClientInstance::preShutDown(void) //0x10009EE78
+ClientInstance::stopPlayScreen(void) //0x1000A0840
+ClientInstance::isLeaveGameDone(void)const //0x1000A147C
+ClientInstance::setupPlayScreenForLeaveGame(void) //0x1000A1484
+ClientInstance::resetPrimaryClient(void) //0x1000A1578
+ClientInstance::resetGameSession(void) //0x1000A15AC
+ClientInstance::frameUpdate(FrameUpdateContext &) //0x1000A1610
+ClientInstance::update(bool) //0x1000A185C
+ClientInstance::startSubClientLateJoin(bool) //0x1000A2B9C
+ClientInstance::setupClientGame(std::function<void ()(bool)> &&, bool) //0x1000A46B8
+ClientInstance::getLocalPlayer(void) //0x1000A4A98
+ClientInstance::getLocalPlayer(void)const //0x1000A4B18
+
+ClientInputHandler::clearInputMapping(void) //0x100AD8DD8
+
+ClientFrameUpdateContext::ClientFrameUpdateContext(FrameUpdateContext &, float, bool) //0x100085E7C
+
+SceneStack::flushStack(bool,bool,bool) //0x1003F5FFC
+SceneStack::pushScreen(std::shared_ptr<AbstractScene>, bool) //0x10040D264
+
+SceneFactory::createStartMenuScreen(bool) //0x1003F56E0
+SceneFactory::createToastScreen(void) //0x1003FCD80
+SceneFactory::createCubeMapScreen(bool) //0x1003D1D08
+SceneFactory::createLateJoinPreGameScreen(std::function<void ()(void)> const&, bool) //0x100403944
+
+Spawner::spawnItem(BlockSource &,ItemStack const&,Actor *,Vec3 const&,int) //0x10546DD6C
+
+DespawnComponent::onDespawn(Actor &) //0x1033A7CE4
+
+ActorDefinitionIdentifier::getFullName(void)const //0x1049372E8
+
+//ActorDamageSource vTable 0x108049BC0
+ActorDamageSource::ActorDamageSource(ActorDamageCause) //0x1049461F8 (0x438 from Actor vTable)
+ActorDamageSource::getCause(void)const //0x1049476D4
+
+ActorDamageByActorSource::ActorDamageByActorSource(Actor &, ActorDamageCause) //0x1049593B0
+
+ActorDefinitionDiffList::getChangedDescription(void) //0x (0x78 from vTable)
+
+ActorDefinitionDescriptor::executeTrigger(Actor &, DefinitionTrigger const&, VariantParameterList const&) //0x10493A688
+
+EntityTypeToString(ActorType,ActorTypeNamespaceRules) //0x104BC8318
+
+I18n::get(std::string const&) //0x103B23B74
+
+AddActorPacket::AddActorPacket(Actor &) //0x103BA6500
+
+ActorEventCoordinator::sendActorStartRiding(Actor &,Actor &) //0x104FA60A4
+ActorEventCoordinator::sendActorUseItem(Actor &, ItemInstance const&, ItemUseMethod) //0x104FA4B58
+
+SpatialActorNetworkData::isAutoSendEnabled(void)const //0x103B9B85C
+
+BossComponent::unRegisterPlayer(Actor &, Player *) //0x1032760EC
+
+AABB::getCenter(void) //0x105C9E14C
+AABB::getBounds(void)const //0x105C9E184
+AABB::grow(Vec3 const&)const //0x105C9D0EC
+
+mce::Math::wrapDegrees(float) //0x10648736C
+mce::Math::floor(float) //0x106487190
+
+ProjectileComponent::hurt(Actor &, ActorDamageSource const&) //0x103552E20
+
+RideableComponent::canAddRider(Actor const&, Actor&)const //0x103560E20
+
+NpcComponent::getCommandPermissionLevel(void)const //0x1034EF468
+
+EconomyTradeableComponent::notifyTrade(int) //0x104DE3000
+
+RopeSystem::cutAtPercent(float) //0x105CA34B8 (!!)
+RopeSystem::isCut(void)const //0x105CA1454
+RopeSystem::isDestroyed(void)const //0x105CA3514
+RopeSystem::queueTick(BlockSource &, std::shared_ptr<RopeSystem> &) //0x105CA0C3C
+
+SimpleContainer::getItem(int) //0x (0x30 from vTable)
+
+EntityTypeToStringAndNamespace(ActorType,std::string &,std::string &) //0x104BC9C18
+
+ActorDefinitionIdentifier::ActorDefinitionIdentifier(std::string,std::string,std::string) //0x1049812DC
+
+BaseAttributeMap::begin(void) //0x104F30EF8
+BaseAttributeMap::end(void) //0x104F30F08
+BaseAttributeMap::registerAttribute(Attribute const&) //0x104F305F4
+
+ClientHMDState::getLastLevelViewSpace(void)const //0x100095AB4
+ClientHMDState::getLastLevelProjSpace(void)const //0x100095B40
+ClientHMDState::getLastLevelWorldSpace(void)const //0x100095C58
+
+MatrixStack::top(void)const //0x1063D0D3C
+MatrixStack::push(void) //0x105113AC4 (!!)
+MatrixStack::MatrixStackRef::~MatrixStackRef() //0x1063D0DE4
+
+BaseActorRenderContext::getEntityBlockRenderer(void) //0x100D8BEE4
+BaseActorRenderContext::getWorldMatrix(void) //0x100D8BEA8
+BaseActorRenderContext::getViewMatrix(void) //0x100D8C2D8
+BaseActorRenderContext::getProjectionMatrix(void) //0x100D8C2C8
+BaseActorRenderContext::BaseActorRenderContext(ScreenContext &, IClientInstance &, IMinecraftGame &) //0x100D8BDBC
+BaseActorRenderContext::getItemInHandRenderer(void) //0x100D8BED4
+BaseActorRenderContext::~BaseActorRenderContext() //0x100D8BDC0
+
+BlockLegacy::getDefaultState(void)const //0x1055568F0
+
+ActorBlockRenderer::render(BaseActorRenderContext &, BlockSource &, Block const*, float) //0x100F9F1D8
+
+Block::asItemInstance(BlockSource &, BlockPos const&)const //0x105546474
+Block::onFallOn(BlockSource &, BlockPos const&, Actor *, float)const //0x105549478
+Block::transformOnFall(BlockSource &, BlockPos const&, Actor *, float)const //0x105549894
+Block::getRuntimeId(void)const //0x10552F504
+Block::getMaterial(void)const //0x105532FA8
+Block::pushesOutItems(void)const //0x105543E50
+Block::isSolid(void)const //0x1049465E8
+
+BlockSource::isInWall(Vec3 const&) //0x1053A11E8
+BlockSource::clip(Vec3 const&,Vec3 const&,bool,bool,int,bool,bool) //0x1053A0298
+BlockSource::canSeeSky(BlockPos const&)const //0x10539B924
+BlockSource::getBlock(BlockPos const&) //0x10539A4C4 (0x18 from vTable)
+BlockSource::getChunk(ChunkPos const&) //0x105399144
+BlockSource::fetchEntities(ActorType,AABB const&,Actor *) //0x (0xC0 from vTable)
+BlockSource::getMaterial(BlockPos const&) //0x (0x58 from vTable)
+BlockSource::getBlock(int,int,int) //0x (0x10 from vTable)
+BlockSource::getLevel(void) //0x105393144
+BlockSource::getDimension(void) //0x (0xE8 from vTable)
+
+LevelChunk::getBlock(ChunkBlockPos const&)const //0x1059D0820
+
+Material::isLiquid(void)const //0x105BF1374
+Material::isType(MaterialType)const //0x105BF131C
+
+BlockPos::BlockPos(Vec3 const&) //0x105393AE0
+BlockPos::toString(void)const //0x10495D82C
+
+ChunkPos::ChunkPos(BlockPos const&) //0x1053B2EB8
+
+ChunkBlockPos::ChunkBlockPos(BlockPos const&) //0x1053B2E54
+
+AttributeInstance::setDefaultValue(float,int) //0x104F2F2CC
+AttributeInstance::setMaxValue(float) //0x104F2FA74
+AttributeInstance::setDelegate(std::shared_ptr<AttributeInstanceDelegate>) //0x104F2FBC0
+AttributeInstance::registerListener(AttributeInstance const&) //0x104F2FAA4
+AttributeInstance::getCurrentValue(void)const //0x104F2F100
+AttributeInstance::addBuff(AttributeBuff const&) //0x104F2F3D8
+AttributeInstance::tick(void) //0x104F2F860
+AttributeInstance::getAttribute(void)const //0x104F2D3F0
+AttributeInstance::removeBuffs(void) //0x104F2F814 (!!)
+
+InstantaneousAttributeBuff::InstantaneousAttributeBuff(float, AttributeBuffType) //0x104F2CCCC
+InstantaneousAttributeBuff::InstantaneousAttributeBuff(float, AttributeBuffType) //0x104F2CCA4
+InstantaneousAttributeBuff::~InstantaneousAttributeBuff() //0x104F2CCF8
+
+Mob::registerAttributes(void) //0x104BDDF1C
+Mob::tickEffects(void) //0x104BDFDB8
+Mob::_doSprintParticleEffect(void) //0x104BE6B14
+Mob::baseTick(void) //0x104BDFB68
+Mob::rideTick(void) //0x104BEAC30
+Mob::isGliding(void)const //0x104BE087C
+Mob::isJumping(void)const //0x104BE6584
+Mob::setIsPregnant(bool) //0x104BE47EC
+Mob::handleEntityEvent(ActorEvent, int) //0x104BE6024
+Mob::getCurrentSwingDuration(void) //0x104BE70B4
+Mob::die(ActorDamageSource const&) //0x104BD0CA4
+Mob::addAdditionalSaveData(CompoundTag &) //0x104BCDFA0
+Mob::saveOffhand(void)const //0x104BE40EC
+Mob::getInterpolatedBodyRot(float)const //0x104BEC304
+Mob::getInterpolatedHeadRot(float)const //0x104BEC314
+Mob::getInterpolatedBodyYaw(float)const //0x104BEC324
+Mob::getYawSpeedInDegreesPerSecond(void)const //0x104BE669C
+Mob::blockedByShield(ActorDamageSource const&, Actor &) //0x104BEAC80
+Mob::lerpTo(Vec3 const&, Vec2 const&, int) //0x104946C84
+Mob::baseTick(void) //0x104BDFB68
+Mob::startRiding(Actor &) //0x104BE5B2C
+Mob::addRider(Actor &) //0x104BE59F4
+Mob::isAlive(void)const //0x104BE480C
+Mob::isSurfaceMob(void)const //0x104BEBE58
+Mob::setTarget(Actor *) //0x104BEAD3C
+Mob::canPowerJump(void)const //0x104BEC948
+Mob::animateHurt(void) //0x104BE47F8
+Mob::doFireHurt(int) //0x104BE0884
+Mob::getArmorMaterialTypeInSlot(ArmorSlot)const //0x104BE8728
+Mob::getArmorMaterialTextureTypeInSlot(ArmorSlot)const //0x104BE87C8
+Mob::getArmorColorInSlot(ArmorSlot, int)const //0x104BE8834
+Mob::causeFallDamage(float) //0x104BE1A28
+Mob::inCaravan(void)const //0x104BEABEC
+Mob::stopRiding(bool, bool, bool) //0x104BE5B58
+Mob::buildDebugInfo(std::string &)const //0x104BEBBB8
+Mob::getDeathTime(void)const //0x104BE88DC
+Mob::swing(void) //0x104BE7214
+Mob::getYHeadRot(void)const //0x104ED84C4
+Mob::getYHeadRot(void)const //0x104BE63F4
+Mob::kill(void) //0x104BE1924
+Mob::updateEntitySpecificMolangVariables(RenderParams &) //0x104BECA54
+Mob::_removeRider(ActorUniqueID const&, bool, bool) //0x104BEC84C
+Mob::getItemInHandIcon(ItemStack const&, int) //0x104BEA880
+Mob::hurtEffects(ActorDamageSource const&, int, bool, bool) //0x104BE0CB0
+Mob::getMeleeWeaponDamageBonus(Mob*) //0x104BE08D0
+Mob::getMeleeKnockbackBonus(void) //0x104BE0970
+Mob::applyFinalFriction(float, bool) //0x104BE3DE4
+Mob::isLookingAtAnEntity(void) //0x104BE5FFC
+Mob::getItemuseIntervalAxis(void) //0x104BE6300
+Mob::getTimeAlongSwing(void) //0x100D32D60
+Mob::getMaxHeadXRot(void) //0x104BE5B64
+Mob::isAlliedTo(Mob*) //0x104BEAEC4
+Mob::doHurtTarget(Actor *) //0x104BEAECC
+Mob::canBeControlledByRider(void) //0x104BEA8F0
+Mob::leaveCaravan(void) //0x104BEA8F8
+Mob::joinCaravan(Mob*) //0x104BEAA58
+Mob::hasCaravanTail(void)const //0x104BEABB0
+Mob::getCaravanHead(void)const //0x104BEAC28
+Mob::getEquipmentCount(void)const //0x104BE7768
+Mob::getArmorValue(void) //0x104BE7698
+
+MobEffectInstance::getId(void)const //0x104FA3844
+MobEffectInstance::getDuration(void)const //0x104FA2E24
+MobEffectInstance::getAmplifier(void)const //0x104FA3854
+MobEffectInstance::isEffectVisible(void)const //0x104FA393C
+MobEffectInstance::applyEffects(Actor *)const //0x104FA39C0
+MobEffectInstance::removeEffects(Actor *)const //0x104FA3A00
+
+MobEffect::getId(void)const //0x104F9D164
+
+MinecraftEventing::fireEventMobEffectChanged(Mob &, MobEffectInstance const&, MinecraftEventing::ChangeType) //0x103AA1034
+
+//Player vTable 0x1080D2F78
+Player::inventoryProxy //0xCD0
+
+Player::Player(Level &, PacketSender &, GameType, NetworkIdentifier const&, unsigned char, std::unique_ptr<SkinInfoData>, mce::UUID, std::string const&, std::unique_ptr<Certificate>, std::string const&, std::string const&) //0x104ED5214
+Player::registerAttributes(void) //0x104ED7270
+Player::getSelectedItem(void)const //0x104EDCC64
+Player::_addLevels(int) //0x104EEDF98
+Player::setPlayerUIItem(PlayerUISlot, ItemStack const&) //0x104EE4448
+Player::remove(void) //0x104EED5E4
+Player::move(Vec3 const&) //0x104EDF024
+Player::teleportTo(Vec3 const&, bool, int, int) //0x104ED84C8
+Player::getAddPacket(void) //0x104EF0744
+Player::normalTick(void) //0x104EDB754
+Player::rideTick(void) //0x104EEEE3C
+Player::getAlwaysShowNameTag(void)const //0x104EF22E4
+Player::getCameraOffset(void)const //0x104EE6E24
+Player::getShadowRadius(void)const //0x104EE6EB0
+Player::isBlocking(void)const //0x104EDEC80
+Player::isDamageBlocked(ActorDamageSource const&)const //0x104EDEDDC
+Player::isCreativeModeAllowed(void) //0x104EE1524
+Player::attack(Actor &) //0x104EE7D18
+Player::isJumping(void)const //0x104EDB648
+Player::onBounceStarted(BlockPos const&, Block const&) //0x104EDD7A8
+Player::feed(int) //0x104EDE02C
+Player::handleEntityEvent(ActorEvent, int) //0x104EEDF78
+Player::awardKillScore(Actor &, int) //0x104EE150C
+Player::setArmor(ArmorSlot, ItemStack const&) //0x104EEFAC8
+Player::setCarriedItem(ItemStack const&) //0x104EED164
+Player::setOffhandSlot(ItemStack const&) //0x104EEFBC8
+Player::getEquippedTotem(void)const //0x104EF11C4
+Player::consumeTotem(void) //0x104EF129C
+Player::getEntityTypeId(void)const //0x100D32D58
+Player::getPortalCooldown(void)const //0x104EEF08C
+Player::getPortalWaitTime(void)const //0x104EEF094
+Player::canAddRider(Actor &)const //0x104EF2610
+Player::canBePulledIntoVehicle(void)const //0x104EF1908
+Player::startSwimming(void) //0x104EF169C
+Player::stopSwimming(void) //0x104EF16C8
+Player::useItem(ItemStack &, ItemUseMethod, bool) //0x104EDE72C
+Player::isWorldBuilder(void) //0x104EF0798
+Player::isCreative(void)const //0x104ED87E0
+Player::isAdventure(void)const //0x104ED8974
+Player::add(ItemStack &) //0x104EE1B9C
+Player::startSpinAttack(void) //0x104EF16F4
+Player::stopSpinAttack(void) //0x104EF1724
+Player::die(ActorDamageSource const&) //0x104EE0FB8
+Player::_hurt(ActorDamageSource const&, int, bool, bool) //0x104EE6F94
+Player::readAdditionalSaveData(CompoundTag const&, DataLoadHelper &) //0x104EE1FF4
+Player::addAdditionalSaveData(CompoundTag &) //0x104EE4AF8
+Player::onSizeUpdated(void) //0x104EF22EC
+Player::getSpeed(void)const //0x104ED89C8
+Player::setSpeed(float) //0x104EED768
+Player::getItemUseDuration(void) //0x104EDEB2C
+Player::getItemUseStartupProgress(void) //0x104EDEB34
+Player::getItemUseIntervalProgress(void) //0x104EDEBB4
+Player::getSupplies(void)const //0x104ED0574
+
+PlayerInventoryProxy::getSelectedItem(void) //0x104F05230
+PlayerInventoryProxy::setSelectedItem(ItemStack const&) //0x104F0525C
+PlayerInventoryProxy::dropAll(bool) //0x104F04E94
+
+//LocalPlayer vTable 0x107DC6B20
+LocalPlayer::LocalPlayer(IClientInstance &, Level &, std::string const&, GameType, NetworkIdentifier const&, unsigned char, mce::UUID, std::string const&, std::unique_ptr<Certificate>) //0x100D21818
+LocalPlayer::normalTick(void) //0x100D241D0
+
+ServerPlayer::normalTick(void) //0x1045CF43C
+
+RemotePlayer::normalTick(void) //0x100D6B6AC
+
+InventoryMenu::InventoryMenu(Player &, Container *) //0x105001454
+
+InventoryAction::InventoryAction(InventorySource, unsigned int, ItemStack const&, ItemStack const&) //0x100D34048
+InventoryAction::~InventoryAction() //0x100D341FC
+
+InventoryTransactionManager::addAction(InventoryAction const&) //0x1050B9D78
+
+InGamePlayScreen::_renderItemInHand(ScreenContext &, Player &, bool) //0x1003B1820
+
+ItemInHandRenderer::renderItem(BaseActorRenderContext &, Actor &, ItemStack const&, bool, bool, ItemContextFlags, bool) //0x101033008
+ItemInHandRenderer::render(BaseActorRenderContext &, bool, ItemContextFlags) //0x1010387CC
+
+ItemStack::ItemStack(ItemStack const&) //0x1051134C8
+ItemStack::ItemStack(ItemInstance const&) //0x105112F14
+ItemStack::ItemStack(Item const&, int, int) //0x105112BA8
+ItemStack::ItemStack(void) //0x105112AD0
+ItemStack::isNull(void)const //0x105116F04
+ItemStack::getUseAnimation(void)const //0x10511BF4C
+ItemStack::getMaxUseDuration(void)const //0x10511528C
+ItemStack::getAttackDamage(void)const //0x105119198
+ItemStack::isEnchanted(void)const //0x10511866C
+ItemStack::getId(void)const //0x1051186A0 (!!)
+ItemStack::getIcon(int, bool)const //0x10511BF08
+ItemStack::isArmorItem(void)const //0x10511BF68
+ItemStack::playSoundIncrementally(Mob &)const //0x1051152E4
+
+ItemInstance::ItemInstance(void) //0x105110710
+ItemInstance::ItemInstance(ItemStack const&) //0x1049F1374
+
+ItemRegistry::getItem(short) //0x10538106C
+
+EnchantUtils::getEnchantLevel(Enchant::Type, ItemStack const&) //0x10536D518
+EnchantUtils::getMeleeDamageBonus(Actor const&, Actor&) //0x10536DB80
+
+LootTables::lookupByName(std::string const&, ResourcePackManager &) //0x105C7E08C
+
+LootTableContext::Builder::Builder(Level *) //0x105C7DF84
+LootTableContext::Builder::withThisEntity(Actor *) //0x105C7DFC4
+LootTableContext::Builder::create(void)const //0x105C7E03C
+
+ItemActor::setSourceEntity(Actor const*) //0x104E055B0
+
+SynchedActorData::_find(ushort) //0x104994410
+SynchedActorData::_find(unsigned short)const //0x104C25AE4 (directly getter)
+SynchedActorData::_resizeToContain(ushort) //0x10499408C
+SynchedActorData::getString(unsigned short)const //0x104C2592C
+SynchedActorData::getInt(unsigned short)const //0x104C2582C
+SynchedActorData::_get(unsigned short) //0x10495418C
+SynchedActorData::_get(unsigned short) (another one, think its correct) //0x104C24F94
+SynchedActorData::getInt8(unsigned short)const //0x104C25744
+SynchedActorData::getInt64(unsigned short)const //0x104C25884
+SynchedActorData::getFloat(unsigned short)const //0x104C258DC
+SynchedActorData::getVec3(unsigned short)const //0x104C25A2C
+
+ActorClassTree::hasCategory(ActorCategory const&, ActorCategory) //0x1049611C4
+
+Util::toString(float, int) //0x104860C48
+
+Palette::fromByte(unsigned char) //0x104802DAC
+
+HashedString::HashedString(std::string const&) //0x1064A1684
+HashedString::getHash(void)const //0x1064A1928
+HashedString::getEmptyString(void) //0x1064A0FD0
+
+Random::nextGaussian(void) //0x106488248
+Random::_genRandInt32(void) //0x104947C00
+
+PhysicsComponent::isAffectedByGravity(Actor const&)const //0x1034F32A0
+
+PlayerAutomationObserver::PlayerAutomationObserver(LocalPlayer &,Automation::AutomationClient &) //0x100D69D6C
+
+ShieldItemUtils::isBlockedDamageCause(ActorDamageSource const&) //0x10514B148
+
+AddPlayerPacket::AddPlayerPacket(Player &) //0x103BA89CC
+
+OwnerStorageEntity::_hasValue(void)const //0x103204460
+OwnerStorageEntity::_getStackRef(void)const //0x103204454
+
+EntityContextBase::_registry(void) //0x1049F23FC (mby not idk)
+
+VanillaDimensions::toSerializedInt(AutomaticID<Dimension, int> const&) //0x105A37D6C
+
+Dimension::sendPacketForEntity(Actor const&, Packet const&, Player const*) //0x105A33170
+Dimension::getWorldGenerator(void)const //0x105A2CE0C
+
+GameRuleId::GameRuleId(int) //0x105BFD168
+
+GameRules::getBool(GameRuleId)const //0x105BFD120
+
+Minecraft::isLeaveGameDone(void)const //0x10491C8D4
+Minecraft::resetGameSession(void) //0x10491C4E4
+Minecraft::getTimer(void) //0x10491EAC0
+
+MinecraftScheduler::client(void) //0x103C12F90
+
+MolangVariableMap::setMolangVariable(unsigned long long, char const*, float) //0x104800BEC
+
+mce::TexturePtr::~TexturePtr() //0x1062FF018
+mce::TexturePtr::operator bool(void)const //0x1062FF630
+
+mce::Math::lerpRotate(float, float, float) //0x106487460
+
+EducationOptions::EducationOptions(ResourcePackManager *) //0x103BFD0D4
+
+Timer::getAlpha(void)const //0x1048BA7EC
